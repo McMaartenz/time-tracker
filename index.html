@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="main.js" defer></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Symbols+Outlined" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <title>Time Tracker</title>
+</head>
+<body>
+    <form>
+        <input type="button" value="add" class="material-icons" onclick="time_add_entry()" />
+        <input type="button" value="download" class="material-icons" onclick="time_export_entry()" />
+        <input type="button" value="upload" class="material-icons" onclick="import_from_formula()" />
+        <span>Total time:&nbsp;</span><span id="total_time"></span>
+        <div id="time_entries_list">
+        </div>
+    </form>
+
+    <div class="time_entry hidden">
+        <input type="button" value="delete" class="time_entry_deleter material-symbols-outlined" />
+        <input type="time" id="start" name="start" min="0:00" max="23:59" required />  
+        <input type="time" id="end" name="end" min="0:00" max="23:59" required />
+        <span id="session_time"></span>
+    </div>
+</body>
+</html>

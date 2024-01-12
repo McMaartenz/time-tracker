@@ -1,0 +1,19 @@
+.hidden { display: none !important; }
+input:invalid { border: 1px solid red; }
+input:valid { border: 1px solid black; }
+
+.time_entry {
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+}
+
+input[type=time] { padding: auto; }
+
+input[type=button] {
+    border: none;
+    background-color: whitesmoke;
+    outline: 1px solid lightgray;
+}
+
+.time_entry_deleter { color: salmon; }
