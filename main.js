@@ -73,14 +73,20 @@ const time_export_entry = () => {
     const entries = get_entries();
     const formatted = entries.map((entry) => `(${entry.end}-${entry.start})`);
 
-    const formula = '=(' + formatted.join('+') + ')*60';
+    let formula = '=(' + formatted.join('+') + ')*60';
+    if ($('#separator').val() == 'comma')
+        formula = formula.replaceAll('.',',');
+
     prompt('Exported time data:', formula);
 };
 
 const import_from_formula = () => {
-    const formula = prompt('Enter formula:');
+    let formula = prompt('Enter formula:');
     if (formula == null)
         return;
+
+    if (formula.includes(','))
+        formula = formula.replaceAll(',','.');
 
     // remove outer =(X)*60
     const without_decl = formula.substring(2, formula.length - 4);

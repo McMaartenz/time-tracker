@@ -15,6 +15,12 @@
         <input type="button" value="add" class="material-icons" onclick="time_add_entry()" />
         <input type="button" value="download" class="material-icons" onclick="time_export_entry()" />
         <input type="button" value="upload" class="material-icons" onclick="import_from_formula()" />
+        <label for="separator">Separator:</label>
+        <select id="separator">
+            <option value="comma">Comma</option>
+            <option value="dot">Dot</option>
+        </select>
+        <br>
         <span>Total time:&nbsp;</span><span id="total_time"></span>
         <div id="time_entries_list">
         </div>
